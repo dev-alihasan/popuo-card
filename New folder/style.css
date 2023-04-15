@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(bg-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 600px;
+  height: 450px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  line-height: 1.5;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+.container-close {
+  position: absolute;
+  top: -0.1em;
+  right: -2em;
+  background-color: #ff7300;
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  font-size: 1.7rem;
+  color: #2e4052;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+}
+.container img {
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+.container-text {
+  padding: 10px 40px 10px 10px;
+}
+.container-text h2 {
+  font-size: 1.2rem;
+  color: #1a2250;
+}
+.container-text p {
+  font-size: 14px;
+  color: #3b4169;
+  margin: 10px 0;
+}
+.container-text input {
+  width: 100%;
+  border: none;
+  padding: 14px;
+  margin: 5px 0 10px;
+  font-size: 1rem;
+  color: #656880;
+  border-radius: 0.5em;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+button {
+  --primary-color: #111;
+  --hovered-color: #ff7300;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+button p::before {
+  position: absolute;
+  content: "Subscribe";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+button:hover::after {
+  width: 100%;
+}
+
+button:hover p::before {
+  width: 100%;
+}
+
+button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+.container-text span {
+  display: block;
+  text-align: center;
+  margin: 20px 0 0;
+  color: #292929;
+  font-size: 12px;
+}
